@@ -3,12 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Bookish&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="botonera">
-    <ul class="navegacion">
-        <li class="liboton"><a class="item" [routerLink]="['/home']">Inicio</a></li>
+  <div class="header">
+    
+    <div class="logo-container">
+      <img src="assets/images/logomsf.png" alt="Logo MSF" class="logo"/>
+    </div>
+
+    <ul class="nav_bar">
+      <li class="liboton"><a class="item" [routerLink]="['/home']" routerLinkActive="active">Inicio</a></li>
+      <li class="liboton"><a class="item" [routerLink]="['/nosotros']" routerLinkActive="active">Nosotros</a></li>
+      <li class="liboton"><a class="item" [routerLink]="['/noticias']" routerLinkActive="active">Noticias</a></li>
+      <li class="liboton"><a class="item" [routerLink]="['/unete']" routerLinkActive="active">Únete</a></li>
     </ul>
+
+    <div class="acceder">
+      <img src="assets/images/LOGE.jpg" alt="Acceso Logo" class="access-logo"/>
+      <a id="link-acceder" [routerLink]="['/acceder']">Acceder</a>
+    </div>
   </div>
+
+
+  <router-outlet></router-outlet>
+
+  <!-- Footer -->
+<footer class="footer">
+  <div class="footer-item">
+    <h4>Email</h4>
+    <p>info&#64;msf.org.ar</p>
+  </div>
+  <div class="footer-item">
+    <h4>Oficina</h4>
+    <p>Av. Santa Fe 4559 - C.P. 1425 - C.A.B.A.</p>
+  </div>
+  <div class="footer-item">
+    <h4>Socios</h4>
+    <p>0810-222-6732</p>
+  </div>
+  <div class="footer-item">
+    <h4>Redes</h4>
+    <a href="https://www.instagram.com/msf_sudamerica/?hl=es" target="_blank">               <img src="assets/images/instagram.png" alt="Redes" class="footer-image" /></a>
+    <a href="https://www.facebook.com/medicossinfronteras.ong/?locale=es_LA" target="_blank"><img src="assets/images/facebook.png" alt="Redes" class="footer-image" /></a>
+    <a href="https://www.tiktok.com/@medicossinfronteras?lang=es" target="_blank">           <img src="assets/images/tik-tok.png" alt="Redes" class="footer-image" /></a>
+    <a href="https://www.youtube.com/@msf-sudamerica" target="_blank">                       <img src="assets/images/youtube.png"  alt="Redes" class="footer-image" /></a> 
+  </div>
+  <div class="footer-item">
+    <img id="mapa" src="assets/images/mapa_msf.png" alt="Mapa">
+  </div>
+</footer>
 </body>
 </html>

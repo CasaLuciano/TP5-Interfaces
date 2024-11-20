@@ -1,0 +1,100 @@
+/*CONTENEDOR NOSOTROS*/
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+    height: auto; /* Ajusta la altura automáticamente según el contenido */
+    min-height: 80vh; /* Asegura que la altura mínima sea del 80% de la ventana */
+}
+/*CAJAS*/
+.cajas {
+    width: 25%;
+    display: flex;
+    flex-direction: column; /* Las cajas apiladas verticalmente */
+    gap: 0px; /* Espacio entre las cajas */
+    height: auto;
+}
+
+.caja {
+    background-color: #E7E2E2;
+    color: black;
+    padding: 50px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+    border: 2px solid black; /* Borde negro alrededor de las cajas */
+    font-size: 40px; /* Aumentar tamaño de letra */
+    transition: background-color 0.3s ease;
+}
+
+.caja:hover {
+    background-color: #9C1C1C; /* Color más oscuro al hacer hover */
+}
+
+.caja.seleccionada {
+    background-color: #FF7D6F; /* Fondo cuando la caja está seleccionada */
+    color: white; /* Cambia el color del texto cuando se selecciona */
+    border: 2px solid #D32F2F;
+}
+/*CONTENIDO*/
+.contenido {
+    display: grid;
+    width: 50%;
+    padding: 20px;
+    margin-left: 20px;
+    text-align: left;
+    height: auto; /* Ajusta la altura según el contenido */
+    background-color: #F3E6E6;
+    border-radius: 8px;
+}
+
+.contenido h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #333; /* Color oscuro para el título */
+    text-align: left; /* Alinear el título a la izquierda */
+    text-decoration: underline; /* Subrayar el texto */
+    margin-left: 100px; /* Ajuste opcional para separarlo más de la izquierda */
+}
+.contenido {
+    display: grid;
+    width: 50%;
+    padding: 20px;
+    margin-left: 20px;
+    text-align: left;
+    height: auto; /* Ajusta la altura según el contenido */
+    background-color: #F3E6E6;
+    border-radius: 8px;
+    /* Agrega esta propiedad para asegurarte de que el contenido no tenga padding que empuje el título */
+    padding-top: 0; /* No agregues espacio extra en la parte superior */
+}
+
+.contenido h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: #333; /* Color oscuro para el título */
+    text-align: left; /* Alinear el título a la izquierda */
+    text-decoration: underline; /* Subrayar el texto */
+    margin-left: 0; /* Asegúrate de que no haya un margen izquierdo innecesario */
+    padding-top: 0; /* Asegúrate de que no haya padding en la parte superior */
+}
+.contenido p {
+    font-size: 28px;
+    line-height: 1.6;
+    color: black; /* Color para el texto */
+}
+/*GIF*/
+.gif {
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gif img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    max-width: 300px; /* Limita el tamaño máximo para que no se vea demasiado grande */
+}

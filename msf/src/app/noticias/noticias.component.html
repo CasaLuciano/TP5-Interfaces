@@ -1,1 +1,14 @@
-<p>noticias works!</p>
+<div class="contenedor">
+    <!-- Sección de Noticias -->
+    <section class="noticias">
+        <div class="noticia" *ngFor="let noticia of noticias">
+            <div class="noticia-imagen" [style.background-image]="'url(' + noticia.imagen + ')'">
+            <div class="nacionalidad">{{ noticia.nacionalidad }}</div>
+            <div class="titulo">{{ noticia.titulo }}</div>
+            <a [href]="noticia.img" target="   _blank" class="ver-mas-btn">Ver más</a>
+            </div>
+        </div>
+    </section>
+
+
+</div>

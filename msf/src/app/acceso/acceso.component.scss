@@ -1,0 +1,103 @@
+.login-container {
+  width: 100%;
+  max-width: 400px; // Limita el ancho máximo del formulario
+  height: auto;
+  margin: 50px auto; // Centra el formulario en la página
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); // Sombra suave para darle profundidad
+  background-color: #fff;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.input-group {
+  display: flex;
+  align-items: center; // Alinea el icono con el centro del input
+  margin-bottom: 2rem;
+  position: relative; // Para poder posicionar el icono sin que se solape
+
+  .icon {
+    position: absolute;
+    left: 12px;  // Ajusta este valor según el tamaño de la imagen
+    top: 50%;    // Centra verticalmente el icono
+    transform: translateY(-50%); // Para que el icono quede centrado
+    width: 20px; // Ajusta el tamaño del icono
+    height: 20px; // Mantén la proporción
+  }
+
+  input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.5rem; // Espacio para el icono a la izquierda
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+
+    &.is-invalid {
+      border-color: #f44336; 
+    }
+
+    &:focus {
+      border-color: #007bff; 
+    }
+  }
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 0.9rem;
+  margin-top: -23px;
+  margin-bottom: 30px;
+  
+}
+
+button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #0056b3; 
+  }
+
+  &:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
+}
+
+.options {
+  text-align: center;
+  margin-top: 1rem;
+
+  button {
+    background: none; 
+    border: none; 
+    padding: 0; 
+    margin: 0; 
+
+    a {
+      color: #007bff; 
+      text-decoration: none; 
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #0056b3; 
+      }
+    }
+  }
+}

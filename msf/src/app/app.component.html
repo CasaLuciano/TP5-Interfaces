@@ -21,12 +21,20 @@
 
     <div class="acceder">
       <img src="assets/images/LOGE.jpg" alt="Acceso Logo" class="access-logo"/>
-      <a id="link-acceder" [routerLink]="['/acceder']">Acceder</a>
+      <a id="link-acceder" [routerLink]="['/acceso']">Acceder</a>
     </div>
   </div>
 
+    <div style="height: 900px; width:95%;">   
+      <router-outlet></router-outlet> 
+        <!-- Imagen a la derecha (GIF) -->
+        <div class="gif">
+          <img src="assets/images/MSF-Cortado_bien.gif" alt="Gif" />
+          <button class="btn-colaborar"><a [routerLink]="['/colaborar']" routerLinkActive="active">Colaborar</a></button>
+          
+        </div>
+  </div>
 
-  <router-outlet></router-outlet>
 
   <!-- Footer -->
 <footer class="footer">

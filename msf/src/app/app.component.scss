@@ -1,6 +1,6 @@
 body {
     background-color: #F3E6E6;
-    font-family: 'Bookish', sans-serif;
+    font-family: 'Roboto';
     color: black;
     margin: 0;
     padding: 0;
@@ -64,7 +64,7 @@ body {
     align-items: center;
     gap: 20%;
     position: relative;
-    top: -40px;
+    top: 0;
     right: 60px;
 }
 
@@ -113,6 +113,7 @@ footer.footer {
 .footer-image {
   height: 40px; /* Ajusta según la imagen */
   width: auto;
+  padding-right: 7px;
 }
 
 .footer-item img.footer-image {
@@ -132,5 +133,45 @@ footer.footer {
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/*GIF*/
+.gif {
+    width: 25%;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    right: 0;
+    top: 0;
+    position: absolute;
+    margin-top: 200px;
+
+    img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        max-width: 300px;
+    }
+
+    .btn-colaborar {
+        
+        margin-top: -90px; 
+        padding: 0.8rem 2rem;
+        background-color: #B91F1F; 
+        border-radius: 10px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            background-color: #930000; 
+        }
+    }
+
+    .btn-colaborar a{
+        text-decoration: none;
+        color: white;
+    }
 }
 

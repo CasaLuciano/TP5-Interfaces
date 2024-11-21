@@ -1,0 +1,133 @@
+<div class="registro-container">
+    <h3 *ngIf="!finalizado">Registro (Paso {{ paso }} de 3)</h3>
+    <h3 *ngIf="finalizado">Resumen del Registro</h3>
+  
+    <!-- Formulario -->
+    <form #registroForm="ngForm" (ngSubmit)="siguientePaso(registroForm)" class="registro-form" *ngIf="!finalizado">
+      <!-- Paso 1 -->
+      <div *ngIf="paso === 1">
+        <input
+          type="text"
+          placeholder="Nombre"
+          [(ngModel)]="nombre"
+          name="nombre"
+          #nombreCtrl="ngModel"
+          required
+        />
+        <div *ngIf="nombreCtrl.invalid && nombreCtrl.touched" class="error">El nombre es obligatorio</div>
+  
+        <input
+          type="text"
+          placeholder="Apellido"
+          [(ngModel)]="apellido"
+          name="apellido"
+          #apellidoCtrl="ngModel"
+          required
+        />
+        <div *ngIf="apellidoCtrl.invalid && apellidoCtrl.touched" class="error">El apellido es obligatorio</div>
+  
+        <input
+          type="email"
+          placeholder="Email"
+          [(ngModel)]="email"
+          name="email"
+          #emailCtrl="ngModel"
+          required
+          email
+        />
+        <div *ngIf="emailCtrl.invalid && emailCtrl.touched" class="error">
+          {{ emailCtrl.errors?.['required'] ? 'El email es obligatorio' : 'Formato de email inválido' }}
+        </div>
+      </div>
+  
+<!-- Paso 2 -->
+<div *ngIf="paso === 2">
+    <input
+      type="text"
+      placeholder="Teléfono"
+      [(ngModel)]="telefono"
+      name="telefono"
+      #telefonoCtrl="ngModel"
+      required
+    />
+    <div *ngIf="telefonoCtrl.invalid && telefonoCtrl.touched" class="error">El teléfono es obligatorio</div>
+  
+    <input
+      type="text"
+      placeholder="Documento"
+      [(ngModel)]="documento"
+      name="documento"
+      #documentoCtrl="ngModel"
+      required
+    />
+    <div *ngIf="documentoCtrl.invalid && documentoCtrl.touched" class="error">El documento es obligatorio</div>
+    <input
+    type="date"
+    placeholder="Fecha de Nacimiento"
+    [(ngModel)]="fechaNacimiento"
+    name="fechaNacimiento"
+    #fechaNacimientoCtrl="ngModel"
+    required
+  />
+  <div *ngIf="fechaNacimientoCtrl.invalid && fechaNacimientoCtrl.touched" class="error">La fecha de nacimiento es obligatoria</div>
+    </div>
+    
+
+  
+  <!-- Paso 3 -->
+
+  <div *ngIf="paso === 3">
+    <select [(ngModel)]="pais" name="pais" #paisCtrl="ngModel" required>
+      <option value="" disabled selected>Selecciona tu país</option>
+      <option *ngFor="let pais of listaPaises" [value]="pais">{{ pais }}</option>
+    </select>
+    <div *ngIf="paisCtrl.invalid && paisCtrl.touched" class="error">El país es obligatorio</div>
+  
+    <input
+      type="text"
+      placeholder="Localidad"
+      [(ngModel)]="localidad"
+      name="localidad"
+      #localidadCtrl="ngModel"
+      required
+    />
+    <div *ngIf="localidadCtrl.invalid && localidadCtrl.touched" class="error">La localidad es obligatoria</div>
+  
+    <div class="checkbox">
+      <input
+        type="checkbox"
+        [(ngModel)]="terminos"
+        name="terminos"
+        #terminosCtrl="ngModel"
+        required
+      />
+      <p> Acepto los términos y condiciones</p>
+    </div>
+    <div *ngIf="terminosCtrl.invalid && terminosCtrl.touched" class="error">Debe aceptar los términos</div>
+    </div>
+  
+      <!-- Barra de progreso -->
+      <div class="progress-bar">
+        <div class="progress" [style.width]="(paso / 3) * 100 + '%'"></div>
+        <div class="progress-text">{{ ((paso / 3) * 100).toFixed(0) }}%</div>
+      </div>
+  
+      <!-- Botón -->
+      <button type="submit" class="btn">Siguiente</button>
+    </form>
+  
+    <!-- Resumen -->
+    <div *ngIf="finalizado" class="resumen">
+      <p><strong>Nombre:</strong> {{ nombre }}</p>
+      <p><strong>Apellido:</strong> {{ apellido }}</p>
+      <p><strong>Email:</strong> {{ email }}</p>
+      <p><strong>Teléfono:</strong> {{ telefono }}</p>
+      <p><strong>Documento:</strong> {{ documento }}</p>
+      <p><strong>Fecha de Nacimiento:</strong> {{ fechaNacimiento }}</p>
+      <p><strong>País:</strong> {{ pais }}</p>
+      <p><strong>Localidad:</strong> {{ localidad }}</p>
+      <p><strong>Aceptó términos:</strong> {{ terminos ? 'Sí' : 'No' }}</p>
+  
+      <button class="btn" (click)="finalizarRegistro()">Finalizar</button>
+    </div>
+  </div>

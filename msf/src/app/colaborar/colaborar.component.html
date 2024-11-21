@@ -1,0 +1,42 @@
+<div class="colaborar-container">
+    <h2 *ngIf="!mostrarImagenAgradecimiento">Realizar una Colaboración</h2>
+  
+    <!-- Selector de método de pago -->
+    <label *ngIf="!mostrarImagenAgradecimiento" for="metodoPago">Método de Pago:</label>
+    <select *ngIf="!mostrarImagenAgradecimiento" id="metodoPago" [(ngModel)]="metodoSeleccionado" (change)="mostrarCamposPago()">
+      <option value="">Seleccione un método</option>
+      <option value="tarjeta">Tarjeta de Crédito</option>
+      <option value="paypal">PayPal</option>
+      <option value="transferencia">Transferencia Bancaria</option>
+    </select>
+  
+    <!-- Campos adicionales según el método de pago -->
+    <div *ngIf="metodoSeleccionado === 'tarjeta' && !mostrarImagenAgradecimiento">
+      <label for="numeroTarjeta">Número de Tarjeta:</label>
+      <input type="text" id="numeroTarjeta" placeholder="XXXX-XXXX-XXXX-XXXX" />
+      <label for="cvv">CVV:</label>
+      <input type="password" id="cvv" maxlength="3" placeholder="CVV" />
+    </div>
+  
+    <div *ngIf="metodoSeleccionado === 'paypal' && !mostrarImagenAgradecimiento">
+      <label for="emailPayPal">Email de PayPal:</label>
+      <input type="email" id="emailPayPal" placeholder="email@ejemplo.com" />
+    </div>
+  
+    <div *ngIf="metodoSeleccionado === 'transferencia' && !mostrarImagenAgradecimiento">
+      <p>Para realizar la transferencia, envíe el monto a la cuenta XXXX-XXXX-XXXX-XXXX.</p>
+    </div>
+  
+    <!-- Selección de monto -->
+    <label *ngIf="!mostrarImagenAgradecimiento" for="monto">Monto de la colaboración:</label>
+    <input *ngIf="!mostrarImagenAgradecimiento" type="text" id="monto" [(ngModel)]="monto" placeholder="Ingrese el monto" />
+  
+    <!-- Botón para enviar la colaboración -->
+    <button *ngIf="!mostrarImagenAgradecimiento" (click)="realizarColaboracion()">Realizar Colaboración</button>
+  
+    <!-- Imagen de agradecimiento -->
+    <div *ngIf="mostrarImagenAgradecimiento" class="agradecimiento">
+      <img src="../../assets/images/comprobado.png" alt="Gracias por su donación" />
+      <h2>Gracias por su donacion!</h2>
+    </div>
+  </div>

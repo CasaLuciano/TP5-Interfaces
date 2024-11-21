@@ -1,0 +1,43 @@
+<div class="login-container">
+    <form (ngSubmit)="login()">
+
+      <div class="input-group">
+        <span class="icon">
+          <img src="../../assets/images/avatar.png" alt="icono-contraseña" style="height: 22px; width: 22px;" class="icon-img">
+        </span>
+        <input 
+          type="text" 
+          placeholder="Usuario" 
+          [(ngModel)]="usuario" 
+          name="usuario" 
+          class="form-control" 
+          [class.is-invalid]="errorUsuario">
+      </div>
+      <div *ngIf="errorUsuario" class="error-message">Usuario incorrecto</div>
+  
+
+      <div class="input-group">
+        <span class="icon">
+          <img src="../../assets/images/cerrar-con-llave.png" style="height: 22px; width: 22px;" alt="icono-contraseña" class="icon-img">
+
+          </span>
+        <input 
+          type="password" 
+          placeholder="Contraseña" 
+          [(ngModel)]="contrasena" 
+          name="contrasena" 
+          class="form-control" 
+          [class.is-invalid]="errorContrasena">
+      </div>
+      <div *ngIf="errorContrasena" class="error-message">Contraseña incorrecta</div>
+  
+      <button type="submit" class="btn btn-primary">Acceder</button>
+    </form>
+  
+  
+    <div class="options">
+      <button class="btn btn-link" ><a class="item" [routerLink]="['/recuperar']" routerLinkActive="active">Olvide mi contraseña</a></button>
+      <button class="btn btn-link" ><a class="item" [routerLink]="['/unete']" routerLinkActive="active">Registrarse</a></button>
+    </div>
+  
+  </div>

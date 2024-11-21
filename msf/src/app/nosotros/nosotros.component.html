@@ -21,40 +21,34 @@
   
     <!-- Área central con el contenido dinámico -->
     <div class="contenido">
-      
-      
-        <ng-container [ngSwitch]="contenidoSeleccionado">
 
-            <ng-template [ngSwitchCase]="'quienesSomos'">
-                <h1>Quienes Somos</h1>
-                <p>MSF fue fundada en 1971 por un grupo de médicos y periodistas en Francia. Su objetivo era dar ayuda médica en situaciones de emergencia y ser testigos de las crisis que presenciaron. Incluyendo los logros hasta el momento, con alguna imagen relevante de las ayudas en los lugares mas afectados</p>
-            </ng-template>
+      <ng-container [ngSwitch]="contenidoSeleccionado">
 
-            <ng-template [ngSwitchCase]="'comoNosFinanciamos'">
-                <h1>Como nos financiamos</h1>
-                <p>En Médicos Sin Fronteras (MSF), nos financiamos principalmente a través de donaciones privadas. Esto incluye contribuciones de individuos, fundaciones y empresas. No dependemos de fondos gubernamentales para asegurar nuestra independencia y libertad para actuar con imparcialidad en situaciones de emergencia. Al mantener este modelo de financiamiento, podemos garantizar que nuestras acciones se centren exclusivamente en las necesidades médicas de las personas, sin influencias externas.</p>
-            </ng-template>
-            
-            <ng-template [ngSwitchCase]="'queHacemos'">
-                <h1>Que hacemos</h1>
-                <p>En Médicos Sin Fronteras (MSF), nos financiamos principalmente a través de donaciones privadas. Esto incluye contribuciones de individuos, fundaciones y empresas. No dependemos de fondos gubernamentales para asegurar nuestra independencia y libertad para actuar con imparcialidad en situaciones de emergencia. Al mantener este modelo de financiamiento, podemos garantizar que nuestras acciones se centren exclusivamente en las necesidades médicas de las personas, sin influencias externas.</p>
-            </ng-template>
+          <ng-template [ngSwitchCase]="'quienesSomos'">
+              <h1>Quienes Somos</h1>
+              <p>MSF fue fundada en 1971 por un grupo de médicos y periodistas en Francia. Su objetivo era dar ayuda médica en situaciones de emergencia y ser testigos de las crisis que presenciaron. Incluyendo los logros hasta el momento, con alguna imagen relevante de las ayudas en los lugares mas afectados</p>
+          </ng-template>
 
-            <ng-template [ngSwitchCase]="'testimonios'">
-                <h1>Testimonios</h1>
-                <p>En Médicos Sin Fronteras (MSF), nos financiamos principalmente a través de donaciones privadas. Esto incluye contribuciones de individuos, fundaciones y empresas. No dependemos de fondos gubernamentales para asegurar nuestra independencia y libertad para actuar con imparcialidad en situaciones de emergencia. Al mantener este modelo de financiamiento, podemos garantizar que nuestras acciones se centren exclusivamente en las necesidades médicas de las personas, sin influencias externas.</p>
-            </ng-template>
+          <ng-template [ngSwitchCase]="'comoNosFinanciamos'">
+              <h1>Como nos financiamos</h1>
+              <p>En Médicos Sin Fronteras (MSF), nos financiamos principalmente a través de <span class="subrayado">donaciones privadas</span> . Esto incluye contribuciones de individuos, fundaciones y empresas. No dependemos de fondos gubernamentales para asegurar nuestra independencia y libertad para actuar con imparcialidad en situaciones de emergencia. Al mantener este modelo de financiamiento, podemos <span class="subrayado"> garantizar</span> que nuestras acciones se centren exclusivamente en las <span class="subrayado">necesidades médicas</span> de las personas, sin influencias externas.</p>
+          </ng-template>
+          
+          <ng-template [ngSwitchCase]="'queHacemos'">
+              <h1>Que hacemos</h1>
+              <p>En Médicos Sin Fronteras (MSF), nos financiamos principalmente a través de donaciones privadas. Esto incluye contribuciones de individuos, fundaciones y empresas. No dependemos de fondos gubernamentales para asegurar nuestra independencia y libertad para actuar con imparcialidad en situaciones de emergencia. Al mantener este modelo de financiamiento, podemos garantizar que nuestras acciones se centren exclusivamente en las necesidades médicas de las personas, sin influencias externas.</p>
+          </ng-template>
 
-            <ng-template [ngSwitchDefault]>
-                <h1>Quienes Somos</h1>
-                <p>MSF fue fundada en 1971 por un grupo de médicos y periodistas en Francia. Su objetivo era dar ayuda médica en situaciones de emergencia y ser testigos de las crisis que presenciaron. Incluyendo los logros hasta el momento, con alguna imagen relevante de las ayudas en los lugares mas afectados</p> 
-            </ng-template>
-        </ng-container>
-      
+          <ng-template [ngSwitchCase]="'testimonios'">
+              <h1>Testimonios</h1>
+              <p>En Médicos Sin Fronteras (MSF), nos financiamos principalmente a través de donaciones privadas. Esto incluye contribuciones de individuos, fundaciones y empresas. No dependemos de fondos gubernamentales para asegurar nuestra independencia y libertad para actuar con imparcialidad en situaciones de emergencia. Al mantener este modelo de financiamiento, podemos garantizar que nuestras acciones se centren exclusivamente en las necesidades médicas de las personas, sin influencias externas.</p>
+          </ng-template>
+
+          <ng-template [ngSwitchDefault]>
+              <h1>Quienes Somos</h1>
+              <p>MSF fue fundada en 1971 por un grupo de médicos y periodistas en Francia. Su objetivo era dar ayuda médica en situaciones de emergencia y ser testigos de las crisis que presenciaron. Incluyendo los logros hasta el momento, con alguna imagen relevante de las ayudas en los lugares mas afectados</p> 
+          </ng-template>
+      </ng-container>
     </div>
   
-    <!-- Imagen a la derecha (GIF) -->
-    <div class="gif">
-      <img src="assets/images/MSF-Cortado_bien.gif" alt="Gif" />
-    </div>
-  </div>
+</div>
